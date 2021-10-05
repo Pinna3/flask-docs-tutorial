@@ -13,7 +13,7 @@ def upload_file():
 
 
 @app.route('/upload', methods=['GET', 'POST'])
-def upload_file():
+def upload_file():  # noqa:F811
     if request.method == 'POST':
         file = request.files['the_file']
         file.save(f'/var/www.uploads/{secure_filename(file.filename)}')
